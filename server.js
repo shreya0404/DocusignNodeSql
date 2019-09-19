@@ -16,5 +16,5 @@ app.post('/docuData', docuData);
 server.listen(PORT, () => console.log(`Express server listening on ${ PORT }`));
 
 function docuData(req, res){
-console.log(docuData);
+console.log(req);
 }
