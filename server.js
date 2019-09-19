@@ -11,7 +11,7 @@ let PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use('/', express.static(__dirname + '/www'));
-app.get('/docuData', docuData);
+app.post('/docuData', docuData);
 
 server.listen(PORT, () => console.log(`Express server listening on ${ PORT }`));
 
