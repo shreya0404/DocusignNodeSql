@@ -20,4 +20,5 @@ server.listen(PORT, () => console.log(`Express server listening on ${ PORT }`));
 function docuData(req, res){
 console.dir(req.body);
 console.log(req.body);
+  res = "test";
 }
