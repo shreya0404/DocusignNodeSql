@@ -17,7 +17,15 @@ app.post('/docuData', docuData);
 
 server.listen(PORT, () => console.log(`Express server listening on ${ PORT }`));
 
-function docuData(req, res){
-console.log(req.rawBody);
-  res = "test";
+function docuData(req, res, next) {
+  req.rawBody = '';
+  req.setEncoding('utf8');
+
+  req.on('data', function(chunk) { 
+    req.rawBody += chunk;
+  });
+
+  req.on('end', function() {
+    next();
+  });
 }
